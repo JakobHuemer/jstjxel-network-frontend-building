@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/jstjxel-network-frontend-building/",
+  // base: "/jstjxel-network-frontend-building/",
   plugins: [
     vue(),
   ],

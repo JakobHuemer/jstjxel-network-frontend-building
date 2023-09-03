@@ -1,4 +1,5 @@
 <script setup>
+
 </script>
 
 
@@ -9,7 +10,7 @@
       <h1>Under Construction</h1>
 
       <div class="sec-row">
-<!--        <h2>Du kannst mir auch hier folgen</h2>-->
+        <!--        <h2>Du kannst mir auch hier folgen</h2>-->
         <div class="socials">
           <RouterLink to="/discord" class="link">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
@@ -41,7 +42,7 @@
 <style lang="scss" scoped>
 
 .wrapper {
-  height: 100vh;
+  height: 100%;
   display: grid;
   align-items: center;
   position: relative;

@@ -14,8 +14,6 @@ onMounted(() => {
 })
 
 
-
-
 function findMostSimilarPath(userInput, pathObjects) {
   let bestMatch = null;
   let minDistance = Infinity;
