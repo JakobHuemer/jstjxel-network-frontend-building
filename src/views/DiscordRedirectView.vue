@@ -16,9 +16,9 @@ import Redirect from '@/components/Redirect.vue';
 
 <template>
 <!--  <p>Redirecting to the official JstJxel Community Discord</p>-->
-  <Redirect img-link="https://www.svgrepo.com/show/353655/discord-icon.svg" name="Discord" link="https://discord.gg/sUz82BCXzf"></Redirect>
+  <Redirect img-url="https://www.svgrepo.com/show/353655/discord-icon.svg" name="Discord" link="https://discord.gg/sUz82BCXzf"></Redirect>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

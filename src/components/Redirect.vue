@@ -10,7 +10,7 @@ const props = defineProps({
     required: true,
     type: String
   },
-  imgLink: {
+  imgUrl: {
     required: true,
     type: String
   },
@@ -46,7 +46,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .wrapper{
   height: 100vh;
