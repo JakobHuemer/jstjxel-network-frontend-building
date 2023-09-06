@@ -37,8 +37,8 @@ onMounted(() => {
 
   setInterval(() => {
     if (currentTime.value <= 1) {
-      // window.location.href = props.link
-      console.log(`Redirecting to ${ props.link }`);
+      window.location.href = props.link
+      // console.log(`Redirecting to ${ props.link }`);
     } else {
       currentTime.value -= 1;
     }
