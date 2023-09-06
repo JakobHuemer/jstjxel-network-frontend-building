@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
+
 
 const props = defineProps({
   link: {
@@ -22,12 +23,22 @@ const props = defineProps({
 });
 
 const currentTime = ref(props.timeTilRedirect);
+let editedImgUrl = ref('');
 
 onMounted(() => {
+
+  if (props.imgUrl.startsWith('/')) {
+    editedImgUrl.value = window.location.protocol + '//' + window.location.hostname + (window.location.port != 433 ? ':' + window.location.port : '') + props.imgUrl;
+  } else {
+    editedImgUrl.value = props.imgUrl;
+  }
+
+  // editedImgUrl.value = "http://localhost:5173/social_media/twitch.svg"
+
   setInterval(() => {
     if (currentTime.value <= 1) {
-      window.location.href = props.link
-      // console.log(`Redirecting to ${ props.link }`);
+      // window.location.href = props.link
+      console.log(`Redirecting to ${ props.link }`);
     } else {
       currentTime.value -= 1;
     }
@@ -40,16 +51,16 @@ onMounted(() => {
   <div class="wrapper">
     <div class="container">
 
-      <img :src="props.imgLink" alt="">
-      <h1>Redirecting to {{ props.name }} in <b>{{ currentTime }}</b></h1>
+
+      <h1>Redirecting to {{ props.name }} in <b :style="{color: '#00C7AC', fontWeight: 600}">{{ currentTime }}</b></h1>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 
-.wrapper{
-  height: 100vh;
+.wrapper {
+  //height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
@@ -64,10 +75,16 @@ onMounted(() => {
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
+
+
+  #svg-obj {
+
+    height: 10rem;
+    padding: .5rem;
+    fill: #00C7AC;
+
+  }
 }
 
-img {
-  height: 10rem;
-  padding: .5rem;
-}
+
 </style>

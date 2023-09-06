@@ -12,9 +12,17 @@ const router = createRouter({
     routes: [
         {
             path: '/',
+            name: 'index',
+            component: CurrentlyBuildingView,
+            meta: {
+            }
+        },
+        {
+            path: '/home',
             name: 'home',
             component: CurrentlyBuildingView,
             meta: {
+                on404: true
             }
         },
         {

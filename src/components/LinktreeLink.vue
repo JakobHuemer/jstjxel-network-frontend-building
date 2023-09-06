@@ -166,13 +166,15 @@ a {
       width: 2.4rem;
       padding: .4rem;
 
-      transition: transform .05s;
+      transition: transform .05s, fill .1s;
 
       &:hover {
+        fill: #00C7AC;
         transform: scale(1.08);
       }
 
       &:active {
+        fill: #00917f;
         transform: scale(0.95);
       }
     }

@@ -72,7 +72,6 @@ function levenshteinDistance(str1, str2) {
 
 <style lang="scss" scoped>
 .wrapper {
-  height: 100vh;
   display: grid;
   place-items: center;
   position: relative;
