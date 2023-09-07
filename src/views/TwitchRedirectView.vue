@@ -16,7 +16,7 @@ import Redirect from '@/components/Redirect.vue';
 
 <template>
 <!--  <p>Redirecting to the official JstJxel Community Discord</p>-->
-  <Redirect img-url="/social_media/twitch.svg" name="Twitch" link="https://twitch.tv/jstjxel"></Redirect>
+  <Redirect img-url="/social-media/twitch.svg" name="Twitch" link="https://twitch.tv/jstjxel"></Redirect>
 </template>
 
 <style lang="scss" scoped>

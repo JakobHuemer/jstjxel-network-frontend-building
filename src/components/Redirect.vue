@@ -51,8 +51,9 @@ onMounted(() => {
   <div class="wrapper">
     <div class="container">
 
-
+      <img :src="editedImgUrl" :alt="name">
       <h1>Redirecting to {{ props.name }} in <b :style="{color: '#00C7AC', fontWeight: 600}">{{ currentTime }}</b></h1>
+      <p class="backup-link">Click <a :href="link">here</a> if you didn't get redirected!</p>
     </div>
   </div>
 </template>
@@ -77,12 +78,14 @@ onMounted(() => {
   transform: translate(-50%, -50%);
 
 
-  #svg-obj {
-
+  img {
     height: 10rem;
-    padding: .5rem;
-    fill: #00C7AC;
+    filter: invert(1);
+    margin-bottom: 2%;
+  }
 
+  .backup-link a {
+    color: #00C7AC;
   }
 }
 
