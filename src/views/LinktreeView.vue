@@ -2,20 +2,32 @@
 
 import LinktreeLink from '@/components/LinktreeLink.vue';
 import { reactive, ref } from 'vue';
+import youtubeSVG from '@/assets/svg/social_media/youtubeSVG.vue';
+import discordSVG from '@/assets/svg/social_media/discordSVG.vue';
+import tiktokSVG from '@/assets/svg/social_media/tiktokSVG.vue';
+import twitchSVG from '@/assets/svg/social_media/twitchSVG.vue';
 
 const links = [
   {
     link: 'https://twitch.tv/jstjxel',
-    name: 'Twitch'
+    name: 'Twitch',
+    svg: twitchSVG,
   },
   {
     link: 'https://tiktok.com/@jstjxel_official',
-    name: 'TikTok'
+    name: 'TikTok',
+    svg: tiktokSVG,
   },
   {
-    link: "https://discord.gg/sUz82BCXzf",
-    name: "Discord"
-  }
+    link: 'https://discord.gg/sUz82BCXzf',
+    name: 'Discord',
+    svg: discordSVG,
+  },
+  {
+    link: 'https://www.youtube.com/@jstjxel',
+    name: 'YouTube',
+    svg: youtubeSVG,
+  },
 ];
 
 const modal = reactive({
@@ -45,11 +57,9 @@ function showModal(id) {
 
     <div class="links">
       <LinktreeLink v-for="item of links" :name="item.name" :url="item.link"
-                    @more="showModal"></LinktreeLink>
-      <!--      <p v-for="(item, id) of links">-->
-      <!--        {{ id }}: {{ item }}-->
-      <!--      </p>-->
-      <!--      <LinktreeLink  id="1" name="Twitch" url="https://twitch.tv/jstjxel"></LinktreeLink>-->
+                    @more="showModal" :svg-icon="item.svg">
+<!--        <component :is="item.svg" :style="{fill: 'black'}"/>-->
+      </LinktreeLink>
     </div>
   </div>
 </template>

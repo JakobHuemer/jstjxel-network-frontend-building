@@ -12,11 +12,12 @@
 // });
 
 import Redirect from '@/components/Redirect.vue';
+import discordSVG from '@/assets/svg/social_media/discordSVG.vue';
 </script>
 
 <template>
 <!--  <p>Redirecting to the official JstJxel Community Discord</p>-->
-  <Redirect img-url="/social-media/discord.svg" name="Discord" link="https://discord.gg/sUz82BCXzf"></Redirect>
+  <Redirect :svg-icon="discordSVG" name="Discord" link="https://discord.gg/sUz82BCXzf"></Redirect>
 </template>
 
 <style lang="scss" scoped>

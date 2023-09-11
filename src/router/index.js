@@ -14,23 +14,23 @@ const router = createRouter({
             path: '/',
             name: 'index',
             component: CurrentlyBuildingView,
-            meta: {
-            }
+            meta: {},
         },
         {
             path: '/home',
             name: 'home',
             component: CurrentlyBuildingView,
             meta: {
-                on404: true
-            }
+                on404: true,
+            },
         },
         {
             path: '/dc',
             name: 'dc',
             component: DiscordRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'Discord',
             },
         },
         {
@@ -38,7 +38,8 @@ const router = createRouter({
             name: 'disc',
             component: DiscordRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'Discord',
             },
         },
         {
@@ -46,52 +47,65 @@ const router = createRouter({
             name: 'discord',
             component: DiscordRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'Discord',
             },
         },
         {
             path: '/building',
             component: CurrentlyBuildingView,
-            name: 'building'
+            name: 'building',
         },
         {
             path: '/live',
-            name: "live-twitch",
+            name: 'live-twitch',
             component: TwitchRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'Twitch',
             },
         },
         {
-            path: "/twitch",
-            name: "twitch",
+            path: '/twitch',
+            name: 'twitch',
             component: TwitchRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'Twitch',
             },
         },
         {
-            path: "/tiktok",
-            name: "tiktok",
+            path: '/tiktok',
+            name: 'tiktok',
             component: TikTokRedirectView,
             meta: {
-                on404: true
+                on404: true,
+                documentTitle: 'TikTok',
             },
         },
         {
             path: '/linktree',
-            name: "linktree",
+            name: 'linktree',
             component: LinktreeView,
             meta: {
-                on404: true
-            }
+                on404: true,
+                documentTitle: 'Linktree',
+            },
         },
         {
-            path: "/:pathMatch(.*)*",
+            path: '/:pathMatch(.*)*',
             name: 'catchAll',
-            component: NotFound404View
-        }
-    ]
+            component: NotFound404View,
+            meta: {
+                documentTitle: "404 Not found"
+            }
+        },
+    ],
+});
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.documentTitle || 'JstJxel Network';
+    next();
 });
 
 export default router;

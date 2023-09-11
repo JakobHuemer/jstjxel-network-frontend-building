@@ -12,11 +12,12 @@
 // });
 
 import Redirect from '@/components/Redirect.vue';
+import twitchSVG from '@/assets/svg/social_media/twitchSVG.vue';
 </script>
 
 <template>
 <!--  <p>Redirecting to the official JstJxel Community Discord</p>-->
-  <Redirect img-url="/social-media/twitch.svg" name="Twitch" link="https://twitch.tv/jstjxel"></Redirect>
+  <Redirect :svg-icon="twitchSVG" name="Twitch" link="https://twitch.tv/jstjxel"></Redirect>
 </template>
 
 <style lang="scss" scoped>

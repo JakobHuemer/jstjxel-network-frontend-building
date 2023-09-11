@@ -11,14 +11,17 @@ const props = defineProps({
     required: true,
     type: String
   },
-  imgUrl: {
-    required: true,
-    type: String
-  },
+  // imgUrl: {
+  //   required: true,
+  //   type: String
+  // },
   timeTilRedirect: {
     required: false,
     default: 1,
     type: Number
+  },
+  svgIcon: {
+    required: true
   }
 });
 
@@ -27,17 +30,18 @@ let editedImgUrl = ref('');
 
 onMounted(() => {
 
-  if (props.imgUrl.startsWith('/')) {
-    editedImgUrl.value = window.location.protocol + '//' + window.location.hostname + (window.location.port != 433 ? ':' + window.location.port : '') + props.imgUrl;
-  } else {
-    editedImgUrl.value = props.imgUrl;
-  }
+  // if (props.imgUrl.startsWith('/')) {
+  //   editedImgUrl.value = window.location.protocol + '//' + window.location.hostname + (window.location.port != 433 ? ':' + window.location.port : '') + props.imgUrl;
+  // } else {
+  //   editedImgUrl.value = props.imgUrl;
+  // }
 
   // editedImgUrl.value = "http://localhost:5173/social_media/twitch.svg"
 
-  setInterval(() => {
+  setTimeout(() => {
     if (currentTime.value <= 1) {
       window.location.href = props.link
+      // window.open(props.link)
       // console.log(`Redirecting to ${ props.link }`);
     } else {
       currentTime.value -= 1;
@@ -51,7 +55,8 @@ onMounted(() => {
   <div class="wrapper">
     <div class="container">
 
-      <img :src="editedImgUrl" :alt="name">
+      <component :is="svgIcon"></component>
+<!--      <img :src="editedImgUrl" :alt="name">-->
       <h1>Redirecting to {{ props.name }} in <b :style="{color: '#00C7AC', fontWeight: 600}">{{ currentTime }}</b></h1>
       <p class="backup-link">Click <a :href="link">here</a> if you didn't get redirected!</p>
     </div>
@@ -78,9 +83,10 @@ onMounted(() => {
   transform: translate(-50%, -50%);
 
 
-  img {
+  svg {
     height: 10rem;
-    filter: invert(1);
+    //filter: invert(1);
+    fill: white;
     margin-bottom: 2%;
   }
 

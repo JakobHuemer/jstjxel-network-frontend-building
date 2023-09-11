@@ -12,11 +12,12 @@
 // });
 
 import Redirect from '@/components/Redirect.vue';
+import tiktokSVG from '@/assets/svg/social_media/tiktokSVG.vue';
 </script>
 
 <template>
 <!--  <p>Redirecting to the official JstJxel Community Discord</p>-->
-  <Redirect img-url="/social-media/tiktok.svg" name="TikTok" link="https://www.tiktok.com/@jstjxel_official"></Redirect>
+  <Redirect :svg-icon="tiktokSVG" name="TikTok" link="https://www.tiktok.com/@jstjxel_official"></Redirect>
 </template>
 
 <style lang="scss" scoped>
