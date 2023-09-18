@@ -51,7 +51,7 @@ const svg = ref('');
 //   }
 //
 // });
-
+let windoww = window
 </script>
 
 <template>
@@ -61,9 +61,9 @@ const svg = ref('');
     <span>{{ name }}</span>
 
     <span class="options">
-      <external-link @click="window.open(url, 'blank')" class="options-external"/>
       <copy-link :style="isSupported ? {}: {fill: 'red'}" @click.prevent="copy(url)"
                  :class="isSupported ? 'options-copy' : 'options-copy unsupported'"/>
+      <external-link @click.prevent="windoww.open(url, '_blank')" class="options-external"/>
     </span>
   </a>
 </template>

@@ -5,6 +5,7 @@ import TwitchRedirectView from '@/views/TwitchRedirectView.vue';
 import TikTokRedirectView from '@/views/TikTokRedirectView.vue';
 import NotFound404View from '@/views/NotFound404View.vue';
 import LinktreeView from '@/views/LinktreeView.vue';
+import YouTubeRedirectView from '@/views/YouTubeRedirectView.vue';
 
 
 const router = createRouter({
@@ -93,11 +94,20 @@ const router = createRouter({
             },
         },
         {
+            path: '/youtube',
+            name: 'youtube',
+            component: YouTubeRedirectView,
+            meta: {
+                on404: true,
+                documentTitle: "YouTube"
+            }
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'catchAll',
             component: NotFound404View,
             meta: {
-                documentTitle: "404 Not found"
+                documentTitle: "404 - Not found"
             }
         },
     ],

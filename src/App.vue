@@ -23,6 +23,8 @@ function isMobile() {
       <li>
         <RouterLink to="/">Home</RouterLink>
       </li>
+
+      <p>{{ isMobile() ? "Mobile" : "Not mobile" }}</p>
     </ul>
   </nav>
 

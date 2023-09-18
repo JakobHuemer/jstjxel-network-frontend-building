@@ -8,6 +8,8 @@ import youtubeSVG from '@/assets/svg/social_media/youtubeSVG.vue';
 
 const online = ref(false);
 
+
+
 const socialsArr = reactive([
   {
     svg: discordSVG,
