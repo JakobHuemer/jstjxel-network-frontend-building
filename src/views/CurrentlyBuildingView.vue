@@ -9,7 +9,6 @@ import youtubeSVG from '@/assets/svg/social_media/youtubeSVG.vue';
 const online = ref(false);
 
 
-
 const socialsArr = reactive([
   {
     svg: discordSVG,
@@ -24,8 +23,8 @@ const socialsArr = reactive([
     classNames: '',
     conditions: {
       live: (async () => {
-        const response = await axios.get('https://jstjxel.de/api/v-1/twitch-online');
-        console.log('RESPONSE DATA INSIDE COMPUTED', !!response.data);
+        const response = await axios.get('https://api.jstjxel.de/v-1/twitch-online');
+        // console.log('RESPONSE DATA INSIDE COMPUTED', !!response.data);
         return !!response.data;
       }),
     },
@@ -84,19 +83,19 @@ async function processConditions(item) {
   let classString = '';
 
   for (const condition of Object.entries(item.conditions)) {
-    console.log('If async function:', typeof item[1] === typeof (async () => {
-    }));
+    // console.log('If async function:', typeof item[1] === typeof (async () => {
+    // }));
     if (typeof condition[1] !== typeof (async () => {
     })) continue;
-    console.log('Now runnign this weird async function with await');
+    // console.log('Now runnign this weird async function with await');
     // const response = await condition[1]()
     // console.log("VAL VAL:", await condition[1]())
     if (await condition[1]()) {
-      console.log(`ADDING ${ condition[0] } to classString`);
+      // console.log(`ADDING ${ condition[0] } to classString`);
       classString += ` ${ condition[0] } `;
     }
   }
-  console.log(`RETURNING "${ ' ' + classString.trim() + ' ' }"`);
+  // console.log(`RETURNING "${ ' ' + classString.trim() + ' ' }"`);
   item.classNames = ' ' + classString.trim() + ' ';
   return ' ' + classString.trim() + ' ';
 
@@ -205,9 +204,9 @@ async function processConditions(item) {
         gap: 1rem;
 
 
-
         a {
           position: relative;
+
           &::after {
             content: "";
             height: 11px;

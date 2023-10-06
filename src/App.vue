@@ -1,13 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
 import { onMounted } from 'vue';
+import TestingSVG from './assets/svg/social_media/testing.svg';
 
 
 onMounted(() => {
   if (isMobile()) {
     document.body.classList.add('mobile');
   }
-})
+});
 
 function isMobile() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -23,8 +24,10 @@ function isMobile() {
       <li>
         <RouterLink to="/">Home</RouterLink>
       </li>
-
-      <p>{{ isMobile() ? "Mobile" : "Not mobile" }}</p>
+      <li>
+<!--        <TestingSVG></TestingSVG>-->
+      </li>
+      <!--      <p>{{ isMobile() ? "Mobile" : "Not mobile" }}</p>-->
     </ul>
   </nav>
 
@@ -63,12 +66,11 @@ nav {
       color: #FFF;
       font-size: 1rem;
       transition: color .2s, text-shadow .15s;
-      text-shadow:
-          0 0 0 #fff,
-          0 0 0 #fff,
-          0 0 0 #0fa,
-          0 0 0 #0fa,
-          0 0 0 #0fa;
+      text-shadow: 0 0 0 #fff,
+      0 0 0 #fff,
+      0 0 0 #0fa,
+      0 0 0 #0fa,
+      0 0 0 #0fa;
 
     }
   }
@@ -77,22 +79,20 @@ nav {
 body:not(.mobile) {
   nav ul li a:hover {
 
-    text-shadow:
-        0 0 7px #fff,
-        0 0 21px #fff,
-        0 0 92px #0fa,
-        0 0 100px #0fa;
+    text-shadow: 0 0 7px #fff,
+    0 0 21px #fff,
+    0 0 92px #0fa,
+    0 0 100px #0fa;
   }
 }
 
 body.mobile {
   nav ul li a:active {
 
-    text-shadow:
-        0 0 7px #fff,
-        0 0 21px #fff,
-        0 0 92px #0fa,
-        0 0 100px #0fa;
+    text-shadow: 0 0 7px #fff,
+    0 0 21px #fff,
+    0 0 92px #0fa,
+    0 0 100px #0fa;
   }
 }
 
